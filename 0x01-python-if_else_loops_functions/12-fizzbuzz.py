@@ -12,6 +12,3 @@ def fizzbuzz():
             continue
         else:
             print("{} ".format(value),  end='')
-
-fizzbuzz()
-print("")

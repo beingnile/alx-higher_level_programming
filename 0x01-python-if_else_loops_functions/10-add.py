@@ -1,2 +1,4 @@
 def add(a, b):
-    return a + b
+    a, b = c, d
+    e = c + d
+    return e

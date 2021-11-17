@@ -5,5 +5,5 @@ The repo includes C files and bash scripts, meant to strengthen my knowledge in 
 
 ## Projects.
 
-* [0x00-Python - Hello World](/0x00-python-hello_world)
-* [0x01-Python - Conditional and Control statements](/0x01-python-if_else_loops_functions)
+* [0x00 Python - Hello World](/0x00-python-hello_world)
+* [0x01 Python - Conditional and Control statements](/0x01-python-if_else_loops_functions)

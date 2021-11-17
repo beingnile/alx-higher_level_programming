@@ -6,7 +6,7 @@ In this project, however, only the basic fundamentals were looked into.
 
 ## Project tasks.
 
-* [0-run](/0x00-python-hello_world/0-run) - Bash script that runs a python file saved in the environment variable `$PYFILE`
+* [0-run](./0-run) - Bash script that runs a python file saved in the environment variable `$PYFILE`
 * [1-run_inline](/1-run_inline) - Bash Script that runs an inline python code stored in `$PYFILE`
 * [2-print.py](/2-print.py) - Python script that prints exactly `"Programming is like building a multilingual puzzle`
 * [3-print_number.py](/3-print_number.py) - Print the integer stored in the variable `number`, followed by `Battery street`

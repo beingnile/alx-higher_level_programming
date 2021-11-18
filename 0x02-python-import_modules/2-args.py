@@ -6,6 +6,8 @@ argc = len(argv)
 if __name__ == '__main__':
     if argc == 1:
         print(f"{argc - 1} arguments.")
+    elif argc == 2:
+        print(f"{argc - 1} argument:")
     else:
         print(f"{argc - 1} arguments:")
 

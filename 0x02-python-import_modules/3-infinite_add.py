@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
+
 def addArgs():
     argc = len(argv)
     if argc == 1:
@@ -13,6 +14,7 @@ def addArgs():
         index += 1
 
     return add
+
 
 if __name__ == '__main__':
     print(addArgs())

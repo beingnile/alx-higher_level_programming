@@ -3,7 +3,13 @@ def safe_print_list(my_list=[], x=0):
     try:
         new_list = my_list[:x]
         print(''.join(str(s) for s in new_list))
-        return new_list[x - 1]
+        count = 0
+        for elem in new_list:
+            count += 1
+        return count
     except IndexError:
         num = my_list[-1:]
-        return (int(''.join(str(s) for s in num)))
+        counter = 0
+        for elem in my_list:
+            counter += 1
+        return counter

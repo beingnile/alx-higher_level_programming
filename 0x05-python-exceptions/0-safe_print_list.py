@@ -2,9 +2,7 @@
 def safe_print_list(my_list=[], x=0):
     try:
         new_list = my_list[:x]
-        for item in new_list:
-            print(item, end='')
-        print('\n')
+        print(''.join(str(s) for s in new_list))
         return new_list[x - 1]
     except IndexError:
         num = my_list[-1:]

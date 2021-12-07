@@ -8,3 +8,4 @@ class Square:
     """
     The empty class that defines a square.
     """
+    pass

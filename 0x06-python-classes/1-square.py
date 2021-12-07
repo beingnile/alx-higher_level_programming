@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-Class Square defines a square by a private attribute ``size`` and instantiates with ``size``
+Class Square defines a square by a private attribute ``size``,
+and instantiates with ``size``
 """
+
 
 class Square:
     """

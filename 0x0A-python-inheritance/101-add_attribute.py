@@ -2,6 +2,7 @@
 
 """ Add attributes to object """
 
+
 def add_attribute(obj, name, value):
     """
     Args:

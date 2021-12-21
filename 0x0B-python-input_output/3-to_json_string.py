@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import json
+
 """ Print the json representation of an object """
+import json
 
 
 def to_json_string(my_obj):
@@ -10,5 +11,4 @@ def to_json_string(my_obj):
     Returns:
         The json representation of my_obj.
     """
-    jdump = json.dumps(my_obj)
-    return jdump
+    return json.dumps(my_obj)

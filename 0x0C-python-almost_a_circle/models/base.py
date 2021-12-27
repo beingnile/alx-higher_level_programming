@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-""" Class Base is the base for other classes in the project """
+"""This module defines a base class for other classes"""
 
 
 class Base:
-    """The Base for all theother classes in the project"""
+    """The Base for all the other classes in the project"""
     __nb_objects = 0
 
     def __init__(self, id=None):

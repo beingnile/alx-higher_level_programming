@@ -4,7 +4,7 @@
 import sys
 
 
-def print_accumulated_metrics(size, status_codes):
+def print_metrics(size, status_codes):
     """
     Prints accumulated metrics.
     Args:
@@ -47,8 +47,8 @@ if __name__ == "__main__":
             except IndexError:
                 pass
 
-        print_stats(size, status_codes)
+        print_metrics(size, status_codes)
 
     except KeyboardInterrupt:
-        print_stats(size, status_codes)
+        print_metrics(size, status_codes)
         raise

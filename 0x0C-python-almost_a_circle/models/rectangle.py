@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from base import Base
+from .base import Base
 """Defines a Class rectangle that inherits from the base class"""
 
 
@@ -88,3 +88,10 @@ class Rectangle(Base):
         elif y < 0:
             raise ValueError('y must be >= 0')
         self.__y = y
+
+    def area(self):
+        """
+        Returns:
+            The area of the rectangle defined by class Rectangle
+        """
+        return self.__width * self.__height

@@ -105,3 +105,11 @@ class Rectangle(Base):
             for row in range(self.__width):
                 print("#", end='')
             print('')
+
+    def __str__(self):
+        """
+        Returns:
+            The overridden __str__ method
+        """
+        return (f"[Rectangle] " + f"({self.id}) {self.__x}/"
+                + f"{self.y} - {self.__width}/{self.__height}")

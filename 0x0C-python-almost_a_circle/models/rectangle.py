@@ -7,7 +7,7 @@ from base import Base
 class Rectangle(Base):
     """Class Rectangle defines a rectangle and inherits from base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initializes theobject on instantiation
+        """Initializes the object on instantiation
 
         Args:
             width (int): The width of the rectangle
@@ -23,7 +23,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Gets the width"""
+        """Get the width"""
         return self.__width
 
     @width.setter
@@ -31,7 +31,7 @@ class Rectangle(Base):
         self.__width = width
 
     @property
-    """Gets the height"""
+    """Get the height"""
     def height(self):
         return self.__height
 
@@ -40,7 +40,7 @@ class Rectangle(Base):
         self.__height = height
 
     @property
-    """Gets x"""
+    """Get x"""
     def x(self):
         return self.__x
 
@@ -49,7 +49,7 @@ class Rectangle(Base):
         self.__x = x
 
     @property
-    """Gets y"""
+    """Get y"""
     def y(self):
         return self.__y
 

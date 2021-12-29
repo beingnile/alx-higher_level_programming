@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from .base import Base
+from base import Base
 """Defines a Class rectangle that inherits from the base class"""
 
 
@@ -95,3 +95,13 @@ class Rectangle(Base):
             The area of the rectangle defined by class Rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        Returns:
+            A Visual representation of the rectangle using # symbols
+        """
+        for col in range(self.__height):
+            for row in range(self.__width):
+                print("#", end='')
+            print('')

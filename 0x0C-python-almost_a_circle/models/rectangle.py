@@ -1,9 +1,20 @@
 #!/usr/bin/python3
 
-from .base import Base
+from base import Base
+"""Defines a Class rectangle that inherits from the base class"""
+
 
 class Rectangle(Base):
+    """Class Rectangle defines a rectangle and inherits from base class"""
     def __init__(self, width, height, x=0, y=0, id=None):
+        """Initializes theobject on instantiation
+
+        Args:
+            width (int): The width of the rectangle
+            height (int): The height of the rectangle
+            x (int): x
+            y (int): y
+        """
         Base.__init__(self, id)
         self.__width = width
         self.__height = height
@@ -12,6 +23,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Gets the width"""
         return self.__width
 
     @width.setter
@@ -19,6 +31,7 @@ class Rectangle(Base):
         self.__width = width
 
     @property
+    """Gets the height"""
     def height(self):
         return self.__height
 
@@ -27,6 +40,7 @@ class Rectangle(Base):
         self.__height = height
 
     @property
+    """Gets x"""
     def x(self):
         return self.__x
 
@@ -35,6 +49,7 @@ class Rectangle(Base):
         self.__x = x
 
     @property
+    """Gets y"""
     def y(self):
         return self.__y
 

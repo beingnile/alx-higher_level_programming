@@ -101,8 +101,12 @@ class Rectangle(Base):
         Returns:
             A Visual representation of the rectangle using # symbols
         """
-        for col in range(self.__height):
-            for row in range(self.__width):
+        for emptyline in range(self.__y):
+            print('')
+        for newline in range(self.__height):
+            for space in range(self.__x):
+                print(' ', end = '')
+            for symbol in range(self.__width):
                 print("#", end='')
             print('')
 

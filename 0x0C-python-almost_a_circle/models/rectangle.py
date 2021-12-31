@@ -117,3 +117,7 @@ class Rectangle(Base):
         """
         return (f"[Rectangle] " + f"({self.id}) {self.__x}/"
                 + f"{self.y} - {self.__width}/{self.__height}")
+
+    def update(self, *args):
+        """Updates the class Rectangle attributes"""
+

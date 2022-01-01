@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from .base import Base
+from base import Base
 """Defines a Class rectangle that inherits from the base class"""
 
 
@@ -119,3 +119,4 @@ class Rectangle(Base):
                 + f"{self.y} - {self.__width}/{self.__height}")
 
     def update(self, *args):
+        """Updates the class Rectangle attributes"""

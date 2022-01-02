@@ -34,3 +34,40 @@ class Square(Rectangle):
             A custom str for __str__ method
         """
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.height}"
+
+    def update(self, *args, **kwargs):
+        """Updates the attributes of class square
+
+        Args:
+            *args (int): A list of non-keyworded arguments
+            **kwargs (int): A list of keyworded arguments
+        """
+        if args and len(args) != 0:
+            for arg in args:
+                index = 0
+                if index == 0:
+                    if arg is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = arg
+                elif index == 1:
+                    self.size = arg
+                elif index == 2:
+                    self.x = arg
+                elif index == 3:
+                    self.y = arg
+                index += 1
+
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    if v is None:
+                        self.__init__(self.size, self.x, self.y)
+                    else:
+                        self.id = v
+                elif k == "size":
+                    self.size = v
+                elif k == "x":
+                    self.x = v
+                elif k == "y":
+                    self.y = v

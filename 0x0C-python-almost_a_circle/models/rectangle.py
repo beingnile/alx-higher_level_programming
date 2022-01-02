@@ -105,7 +105,7 @@ class Rectangle(Base):
             print('')
         for newline in range(self.__height):
             for space in range(self.__x):
-                print(' ', end = '')
+                print(' ', end='')
             for symbol in range(self.__width):
                 print("#", end='')
             print('')

@@ -138,3 +138,13 @@ class Base:
                 return [cls.create(**d) for d in list_dicts]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draw a visual representation of rectangles and squares
+
+        Args:
+            list_rectangles (list): Rectangle objects to draw.
+            list_square (list): Square objects to draw.
+        """
+        

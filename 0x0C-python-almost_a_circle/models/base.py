@@ -5,6 +5,7 @@ The module defines a class Base from which other classes inherit from
 """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -147,4 +148,30 @@ class Base:
             list_rectangles (list): Rectangle objects to draw.
             list_square (list): Square objects to draw.
         """
-        
+        turtle.speed(3)
+        t = turtle.Turtle()
+        t.color("black")
+        t.hideturtle()
+        for rect_objs in list_rectangles:
+            t.up()
+            t.setx(rect_objs.x)
+            t.sety(rect_objs.y)
+            t.down()
+            for i in range(2):
+                t.fd(rect_objs.width)
+                t.lt(90)
+                t.fd(rect_objs.height)
+                t.lt(90)
+
+        for sq_objs in list_squares:
+            t.up()
+            t.setx(sq_objs.x)
+            t.sety(sq_objs.y)
+            t.down()
+            for i in range(2):
+                t.fd(sq_objs.width)
+                t.lt(90)
+                t.fd(sq_objs.height)
+                t.lt(90)
+
+        turtle.exitonclick()

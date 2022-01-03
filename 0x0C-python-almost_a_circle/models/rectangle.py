@@ -199,3 +199,4 @@ class Rectangle(Base):
                 "x": self.__x,
                 "y": self.__y
                 }
+

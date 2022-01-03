@@ -133,12 +133,28 @@ class Rectangle(Base):
                     else:
                         self.id = arg
                 elif index == 1:
+                    if type(arg) != int:
+                        raise TypeError('width must be an integer')
+                    elif arg <= 0:
+                        raise ValueError('width must be > 0')
                     self.__width = arg
                 elif index == 2:
+                    if type(arg) != int:
+                        raise TypeError('height must be an integer')
+                    elif arg <= 0:
+                        raise ValueError('height must be > 0')
                     self.__height = arg
                 elif index == 3:
+                    if type(arg) != int:
+                        raise TypeError('x must be an integer')
+                    elif arg < 0:
+                        raise ValueError('x must be >= 0')
                     self.__x = arg
                 elif index == 4:
+                    if type(arg) != int:
+                        raise TypeError('y must be an integer')
+                    elif arg < 0:
+                        raise ValueError('y must be >= 0')
                     self.__y = arg
                 index += 1
 
@@ -150,12 +166,28 @@ class Rectangle(Base):
                     else:
                         self.id = v
                 elif k == "width":
+                    if type(v) != int:
+                        raise TypeError('width must be an integer')
+                    elif v <= 0:
+                        raise ValueError('width must be > 0')
                     self.__width = v
                 elif k == "height":
+                    if type(v) != int:
+                        raise TypeError('height must be an integer')
+                    elif v <= 0:
+                        raise ValueError('height must be > 0')
                     self.__height = v
                 elif k == "x":
+                    if type(v) != int:
+                        raise TypeError('x must be an integer')
+                    elif v < 0:
+                        raise ValueError('x must be >= 0')
                     self.__x = v
                 elif k == "y":
+                    if type(v) != int:
+                        raise TypeError('y must be an integer')
+                    elif v < 0:
+                        raise ValueError('y must be >= 0')
                     self.__y = v
 
     def to_dictionary(self):

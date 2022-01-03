@@ -5,6 +5,7 @@ import sys
 import unittest
 from models.base import Base
 from models.square import Square
+"""Unittests for square module"""
 
 
 class TestSquare_instantiation(unittest.TestCase):

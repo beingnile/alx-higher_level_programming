@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-Defines a Class rectangle that inherits from the base class
+Defines a Class rectangle that inherits from the class Base in base module
 """
 from models.base import Base
 
@@ -193,7 +193,7 @@ class Rectangle(Base):
                     self.__y = v
 
     def to_dictionary(self):
-        """Return the dictionaryrepresentation of attributes"""
+        """Return the dictionary representation of attributes"""
         return {
                 "id": self.id,
                 "width": self.__width,

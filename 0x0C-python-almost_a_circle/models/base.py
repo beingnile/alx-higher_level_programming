@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 
+"""
+The module defines a class Base from which other classes inherit from
+"""
 import json
 import csv
-"""This module defines a base class for other classes"""
 
 
 class Base:

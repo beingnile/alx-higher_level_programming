@@ -78,3 +78,19 @@ class Base:
                 attr = cls(1)
         attr.update(**dictionary)
         return attr
+
+    @classmethod
+    def load_from_file(cls):
+        """Returns a list of instances
+
+        Returns:
+            If the file does not exist - an empty list.
+            A List of instances.
+        """
+        json_file = str(cls.__name__) + ".json"
+        try:
+            with open(json_file, "r") as f:
+                objs = Base.from_json_string(f.read())
+                return [cls.create(**d) for d in objs]
+        except IOError:
+            return "[]"

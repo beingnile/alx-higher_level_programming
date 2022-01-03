@@ -112,8 +112,9 @@ class Base:
                     attr = ["id", "width", "height", "x", "y"]
                 else:
                     attr = ["id", "size", "x", "y"]
+                w = csv.DictWriter(f, fieldnames=attr)
                 for obj in list_objs:
-                    csv.DictWriter(f, fieldnames=attr).writerow(obj.to_dictionary())
+                    w.writerow(obj.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):

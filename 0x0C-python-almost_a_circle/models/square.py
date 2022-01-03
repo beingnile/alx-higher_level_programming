@@ -43,11 +43,11 @@ class Square(Rectangle):
             **kwargs (int): A list of keyworded arguments
         """
         if args and len(args) != 0:
+            index = 0
             for arg in args:
-                index = 0
                 if index == 0:
                     if arg is None:
-                        self.__init__(self.size, self.x, self.y)
+                        self.__init__(self.__size, self.x, self.y)
                     else:
                         self.id = arg
                 elif index == 1:

@@ -26,8 +26,10 @@ Class `Base` has the following features:
 * Class method `def create(cls, **dictionary):` that returns an instance with all attributes already set
 * Class method `def load_from_file(cls):` that returns a list of instances
 * Class methods `def save_to_file_csv(cls, list_objs):` and `def load_from_file_csv(cls):` that serializes and deserializes in CSV
+* Static method `def draw(list_rectangles, list_squares):` that opens a window and draws all the `Rectangles` and `Squares`
 
-The goal of it is to manage the `id` attribute in all the future classes and to avoid duplicating the same code (by extension, same bugs).
+The goal of the class `Base` is to manage the `id` attribute in all the future classes and to avoid duplicating the same code (by extension, same bugs).
 
 ### rectangle.py
 
+This module contains a class `Rectangle` that inherits from the class `Base` 

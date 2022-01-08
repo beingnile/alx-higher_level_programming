@@ -37,4 +37,6 @@ The features of class `Rectangle` include:
 * Private instance attributes, `__width`, `__height`, `__x` and `__y`, each with it's own public getter and setter
 * Class constructor: `def __init__(self, width, height, x=0, y=0, id=None)`
 * Public method `def area(self):` that returns the area value of the `Rectangle` instance.
-* Public method `def display(self):` that prints in stdout the Rectangle instance with the character `#`
+* Public method `def display(self):` that prints in stdout the Rectangle instance with the character `#` 
+* `__str__` method overridden so that it returns `[Rectangle] (<id>) <x>/<y> - <width>/<height>`
+* Public method `def update(self, *args):` that assigns an argument to each attribute. 

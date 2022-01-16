@@ -39,4 +39,7 @@ The features of class `Rectangle` include:
 * Public method `def area(self):` that returns the area value of the `Rectangle` instance.
 * Public method `def display(self):` that prints in stdout the Rectangle instance with the character `#` 
 * `__str__` method overridden so that it returns `[Rectangle] (<id>) <x>/<y> - <width>/<height>`
-* Public method `def update(self, *args):` that assigns an argument to each attribute. 
+* Public method `def update(self, *args):` that assigns an argument to each attribute.
+
+### square.py
+This module defines a class `Square` that inherits from the class `Rectangle`

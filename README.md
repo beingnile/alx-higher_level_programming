@@ -19,3 +19,4 @@ The code should use the `Betty` style. It is checked using [`betty-style.pl`](ht
 
 * [0x00 Python - Hello World](/0x00-python-hello_world)
 * [0x01 Python - Conditional and Control statements](/0x01-python-if_else_loops_functions)
+

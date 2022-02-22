@@ -1,6 +1,7 @@
 # Higher-level programming.
 
-This Repository covers my journey learning high level programming. It covers Python fundamentals as studied in order. Compared to C, Python is a high level programming language that does most things like memory management for you.
+This Repository covers my journey learning high level programming. It covers Python fundamentals as studied in order. Compared to C, Python is a high level programming language that does most things like memory management for you. 
+The repo also contains my learning track on Databases.
 The repo includes C files and bash scripts, meant to strengthen my knowledge in the areas.
 
 ## Linters used.

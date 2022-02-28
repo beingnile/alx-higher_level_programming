@@ -9,9 +9,6 @@ if (process.argv.length <= 3) {
   // Slice the arguments
   const arr = process.argv.slice(2);
 
-  // Parse the arguments
-  // let sliced = arr.forEach(item => parseInt(item));
-
   // Sort the sliced arguments
   arr.sort((a, b) => b - a);
 

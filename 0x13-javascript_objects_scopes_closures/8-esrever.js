@@ -2,6 +2,7 @@
 
 // Return reversed version of list
 exports.esrever = function (list) {
-	const rev = list.reduceRight((a, c) => (a.push(c), a), []);
+	const rev = [];
+	list.forEach(item => rev.unshift(item));
 	return rev;
 };

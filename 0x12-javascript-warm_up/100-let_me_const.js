@@ -1,5 +1,5 @@
 #!/usr/bin/node
 
 if (myVar) {
-	myVar = 333;
+  myVar = 333;
 }

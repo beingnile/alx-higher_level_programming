@@ -4,6 +4,6 @@
 // and the new argument value
 const stack = [];
 exports.logMe = function (item) {
-	stack.push(item)
-	console.log(stack.indexOf(item) + ': ' + item);
+  stack.push(item);
+  console.log(stack.indexOf(item) + ': ' + item);
 };

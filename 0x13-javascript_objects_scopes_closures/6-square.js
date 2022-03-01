@@ -2,7 +2,7 @@
 
 // Class 'Square' defines a square
 // and inherits from class 'Rectangle'
-module.exports = class Square extends require('./4-rectangle.js') {
+module.exports = class Square extends require('./5-square.js') {
   constructor (size) {
     super(size, size);
   }

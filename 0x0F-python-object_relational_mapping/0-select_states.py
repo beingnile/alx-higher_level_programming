@@ -12,7 +12,9 @@ def main():
     # mydb.query("""SELECT * FROM states ORDER BY id ASC""")
     cursor = mydb.cursor()
     cursor.execute("""SELECT * FROM states ORDER BY id ASC""")
-    cursor.fetchall()
+    result = cursor.fetchall()
+    for row in result:
+        print(row)
 
 
 if __name__ == '__main__':

@@ -9,8 +9,9 @@ from sys import argv
 def main():
     """Run script if name == main"""
     mydb = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
-    mydb.query("""SELECT * FROM states ORDER BY id ASC""")
+    # mydb.query("""SELECT * FROM states ORDER BY id ASC""")
     cursor = mydb.cursor()
+    cursor.execute("""SELECT * FROM states ORDER BY id ASC""")
     cursor.fetchall()
 
 

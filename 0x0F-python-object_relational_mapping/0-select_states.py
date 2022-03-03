@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+"""The script lists all states from the database hbtn_0e_0_usa"""
+
+import MySQLdb
+from sys import argv
+
+
+def main():
+    """Run script if name == main"""
+    mydb = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
+    mydb.query("""SELECT * FROM states ORDER BY id ASC""")
+
+
+if __name__ == '__main__':
+    main()

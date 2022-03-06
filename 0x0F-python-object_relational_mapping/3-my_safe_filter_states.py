@@ -14,12 +14,11 @@ def main():
     """Run script if name == main"""
     mydb = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cursor = mydb.cursor()
-    sql = ("SELECT * FROM states WHERE name REGEXP '{}' ORDER BY id ASC"
-           .format(argv[4]))
+    sql = ("SELECT * FROM states")
     cursor.execute(sql)
-    result = cursor.fetchall()
-    for row in result:
-        print(row)
+    for state in cursor.fetchall():
+        if state[1] == argv[4]:
+            print(state)
 
 
 if __name__ == '__main__':

@@ -13,7 +13,8 @@ def main():
     """Run script if name == main"""
     mydb = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cursor = mydb.cursor()
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+    sql = "SELECT * FROM states WHERE name REGEXP '^[N%]' ORDER BY id ASC"
+    cursor.execute(sql)
     result = cursor.fetchall()
     for row in result:
         print(row)

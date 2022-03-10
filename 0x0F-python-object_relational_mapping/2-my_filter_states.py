@@ -14,7 +14,7 @@ def main():
     """Run script if name == main"""
     mydb = MySQLdb.connect(user=argv[1], passwd=argv[2], db=argv[3])
     cursor = mydb.cursor()
-    sql = ("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+    sql = ("SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
            .format(argv[4]))
     cursor.execute(sql)
     result = cursor.fetchall()

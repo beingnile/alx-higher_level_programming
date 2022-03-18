@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from urllib.request import urlopen, Request
 
+
 def main():
     req = Request('https://alx-intranet.hbtn.io/status')
     with urlopen(req) as response:
@@ -10,6 +11,7 @@ def main():
     print(f"\t- type: {type(content)}")
     print(f"\t- content: {content}")
     print(f"\t- utf8 content: {content.decode('utf-8')}")
+
 
 if __name__ == '__main__':
     main()

@@ -16,7 +16,7 @@ from urllib.parse import urlencode
 
 def main():
     """Send POST request to URL and display response body"""
-    value = {'email' : argv[2]}
+    value = {'email': argv[2]}
     data = urlencode(value)
     data = data.encode('ascii')
     req = Request(argv[1], data)

@@ -8,7 +8,7 @@ Constraints:
     The body of the response must be displayed
     like the example below.
 
-Example:
+Output example:
     ::
         $ ./4-hbtn_status.py | cat -e
         Body response:$

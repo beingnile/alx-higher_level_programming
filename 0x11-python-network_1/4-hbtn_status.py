@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Fetches https://alx-intranet.hbtn.io/status
+using the requests package
 
 Constraints:
     The package `requests` must be used

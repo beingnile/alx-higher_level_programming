@@ -2,7 +2,7 @@
 """Fetches https://alx-intranet.hbtn.io/status
 
 Constraints:
-    The package requests must be used
+    The package `requests` must be used
     No any other package should be imported
     The body of the response must be displayed
     like the example below.

@@ -21,7 +21,7 @@ def main():
         with urlopen(req) as response:
             content = response.read()
     except HTTPError as e:
-        print("Error code: ", e.code)
+        print("Error code:", e.code)
     else:
         print(content.decode('utf-8'))
 

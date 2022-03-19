@@ -15,6 +15,7 @@ Example:
             - content: OK$
 """
 import requests
+from sys import argv
 
 
 def main():

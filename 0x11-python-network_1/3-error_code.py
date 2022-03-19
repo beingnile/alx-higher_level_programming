@@ -16,12 +16,12 @@ from urllib.error import HTTPError
 
 def main():
     """Sends request to URL and display response body"""
-    req = Request(argv[1])
     try:
+        req = Request(argv[1])
         with urlopen(req) as response:
             content = response.read()
     except HTTPError as e:
-        print(f"Error code: {e.code}")
+        print("Error code: ", e.code)
     else:
         print(content.decode('utf-8'))
 

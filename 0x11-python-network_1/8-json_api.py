@@ -30,7 +30,7 @@ def main():
     except ValueError:
         print("Not a valid JSON")
     else:
-        if myjson is {}:
+        if myjson == {}:
             print("No result")
         else:
             print(f"[{myjson.get('id')}] {myjson.get('name')}")

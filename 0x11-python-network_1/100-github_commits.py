@@ -10,8 +10,7 @@ import requests
 
 
 def main():
-    url = f"https://api.github.com/repos/{argv[1]}/{argv
-    [2]}/commits"
+    url = f"https://api.github.com/repos/{argv[1]}/{argv[2]}/commits"
 
     r = requests.get(url)
     myjson = r.json()

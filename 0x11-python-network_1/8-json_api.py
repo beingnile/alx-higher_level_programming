@@ -27,13 +27,13 @@ def main():
     r = requests.post("http://0.0.0.0:5000/search_user", data=letter)
     try:
         myjson = r.json()
-    except Exception:
+    except ValueError:
         print("Not a valid JSON")
     else:
         if myjson is None:
             print("No result")
         else:
-            print(f"[{myjson['id']}] {myjson['name']}")
+            print(f"[{myjson.get("id")}] {myjson.get("name")}")
 
 
 if __name__ == '__main__':

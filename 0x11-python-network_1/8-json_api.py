@@ -21,12 +21,10 @@ from sys import argv
 
 def main():
     """Send POST request to URL"""
-    if len(argv) == 1:
-        letter = ""
-    else:
-        letter = argv[1]
-    myletter = {'q': letter}
-    r = requests.post("http://0.0.0.0:5000/search_user", data=myletter)
+    letter = {'q': ""}
+    if len(argv) == 2:
+        letter['q'] = argv[1]
+    r = requests.post("http://0.0.0.0:5000/search_user", data=letter)
     try:
         myjson = r.json()
     except ValueError:

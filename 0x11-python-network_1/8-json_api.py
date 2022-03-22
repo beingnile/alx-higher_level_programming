@@ -33,7 +33,7 @@ def main():
         if myjson is None:
             print("No result")
         else:
-            print(f"[{myjson.get("id")}] {myjson.get("name")}")
+            print(f"[{myjson.get('id')}] {myjson.get('name')}")
 
 
 if __name__ == '__main__':

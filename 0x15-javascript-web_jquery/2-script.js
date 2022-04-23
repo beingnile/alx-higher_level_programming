@@ -1,3 +1,3 @@
 $('#red_header').click(function () {
-  $('#red_header').css('color', 'red');
+  $('header').css('color', 'red');
 });

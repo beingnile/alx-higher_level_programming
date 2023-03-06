@@ -1,0 +1,2 @@
+#!/bin/basj
+python3 -c $PYCODE

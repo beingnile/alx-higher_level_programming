@@ -13,5 +13,5 @@ for i in range(1, 100):
     if ''.join(sorted(i)) in someList:
         continue
     else:
-        someList.append(i)
+        someList += [i]
     print("{}".format(i), end=', ')

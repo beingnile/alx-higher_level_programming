@@ -2,4 +2,4 @@
 for i in range(122, 96, -1):
     if i % 2 == 1:
         i -= 32
-    print(chr(i), end='')
+    print("{c:c}".format(c=i), end='')

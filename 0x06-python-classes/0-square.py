@@ -2,6 +2,7 @@
 """Defines an empty class
 """
 
+
 class Square:
     """Defines a square
     """

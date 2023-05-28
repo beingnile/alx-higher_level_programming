@@ -43,9 +43,20 @@ class SinglyLinkedList:
             self.__head = Node(value)
             return
         current = self.__head
-        while current.next_node is not None:
+        prev = None
+
+        while current is not None and current.data < value:
+            prev = current
             current = current.next_node
-        current.next_node = Node(value)
+
+        new = Node(value)
+
+        if prev is None:
+            new.next_node = self.__head
+            self.__head = new
+        else:
+            prev.next_node = new
+            new.next_node = current
 
     def __str__(self):
         """Prints each node in stdout"""

@@ -2,7 +2,7 @@
 
 Tests are somewhat a pain to right amongst most developers in the tech ecosystem.  
 From the number of tweets I've interacted with, most developers
-shy away from writing tests. THe process however deems to be productive 
+shy away from writing tests. The process however deems to be productive 
 and helpful. Testing involves assessing a software system and/or 
 its component(s) to check if it meets the necessary requirements.  
 Although it might not assure 100% bug-free software, test-driven development helps in:  

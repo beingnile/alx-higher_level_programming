@@ -14,3 +14,4 @@ Although it might not assure 100% bug-free software, test-driven development hel
 This project is done in fulfillment of project tasks aimed to practice
 the skill of test-driven development by ALX Africa. Each file is a task solution
 written by myself in Python.  
+Every file has a corresponding test with the same filename and the .txt extension in the tests folder.  

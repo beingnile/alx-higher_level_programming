@@ -5,7 +5,7 @@ From the number of tweets I've interacted with, most developers
 shy away from writing tests. The process however deems to be productive 
 and helpful. Testing involves assessing a software system and/or 
 its component(s) to check if it meets the necessary requirements. Test-driven development
-takes a more iterative approach of software testing.  
+takes a more iterative approach to software testing.  
 Although it might not assure 100% bug-free software, test-driven development helps in:  
 
 * Reduction of potential costs in solving bugs in later development phases

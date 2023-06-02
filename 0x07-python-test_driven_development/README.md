@@ -1,6 +1,6 @@
 # Python Test-Driven Development
 
-Tests are somewhat a pain to right amongst most developers in the tech ecosystem.  
+Tests are somewhat a pain to right amongst most developers in the tech ecosystem. 
 From the number of tweets I've interacted with, most developers
 shy away from writing tests. The process however deems to be productive 
 and helpful. Testing involves assessing a software system and/or 

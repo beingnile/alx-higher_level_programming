@@ -48,6 +48,8 @@ class Rectangle:
 
     def __str__(self):
         """Overwrite __str__ method"""
+        if self.width == 0 or self.height == 0:
+            return ''
         for i in range(self.height):
             for j in range(self.width):
                 print("#", end='')

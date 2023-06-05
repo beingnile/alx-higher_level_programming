@@ -97,4 +97,3 @@ class Rectangle:
         width == height == size
         """
         return cls(size, size)
-

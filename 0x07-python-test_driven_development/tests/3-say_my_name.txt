@@ -1,0 +1,137 @@
+``3-say_my_name`` tests
+========================
+
+This document defines the tests for the ``say_my_name`` function from
+the ``3-say_my_name`` module
+Function prototype: def say_my_name(first_name, last_name="")
+
+Import the 3-say_my_name function:
+
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test cases:
+Both arguments are passed
+
+	>>> say_my_name("John", "Smith")
+	My name is John Smith
+
+Empty strings as argument
+
+	>>> say_my_name("")
+	My name is    
+
+A single argument is passed
+
+	>>> say_my_name("Bob")
+	My name is Bob 
+
+A float as an argument
+
+	>>> say_my_name(3.84)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", 3.84)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+An integer as an argument
+
+	>>> say_my_name(3)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", 3)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+A list as an argument
+
+	>>> say_my_name([])
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", [])
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+A dict as an argument
+
+	>>> say_my_name({})
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", {})
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+A tuple as an argument
+
+	>>> say_my_name(())
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", ())
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+A NoneType as an argument
+
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+	>>> say_my name("Walter", None)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+A concatenated string as an argument
+
+	>>> say_my_name("Walter" + " White")
+	My name is Walter White 
+
+	>>> say_my name("Winslow", "Walter" + " White")
+	My name is Winslow Walter White
+
+A multiplied string as an argument
+
+	>>> say_my_name("Walter", "Tin" * 2)
+	My name is Walter TinTin
+
+	>>> say_my name("Tin" * 2, "White")
+	My name is TinTin White
+
+lower() string method as an argument
+
+	>>> say_my_name("Walter".lower(), "White")
+	My name is walter White
+
+	>>> say_my_name("Walter", "White".lower())
+	My name is Walter white
+
+Joined list as an argument
+
+	>>> say_my_name(''.join(['W', 'a', 'l', 't']), "White")
+	My name is Walt White
+
+	>>> say_my_name("White", ''.join(['W', 'a', 'l', 't']))
+	My name is White Walt
+
+Test with large inputs
+
+	>>> say_my_name('w' * 10 ** 10, "White")
+	Traceback (most recent call last):
+		...
+	MemoryError

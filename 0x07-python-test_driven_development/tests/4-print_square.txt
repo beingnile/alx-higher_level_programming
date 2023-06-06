@@ -1,0 +1,72 @@
+``4-print_square.py`` tests
+===========================
+
+This document defines tests for the ``print_square`` function from
+the ``4-print_sqaure`` module
+Function prototype: def print_square(size)
+
+Import ``print_square`` from ``4-print_square``
+
+	>>> print_square = __import__('4-print_square').print_square
+
+Test cases
+Size is a valid integer
+
+	>>> print_square(3)
+	###
+	###
+	###
+
+Size is a string
+
+	>>> print_square("3 times")
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+size is a float
+
+	>>> print_square(3.43)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+size is a tuple
+
+	>>> print_square((1, 2))
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+size is a dict
+
+	>>> print_square({})
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+size is of NoneType
+
+	>>> print_square(None)
+	Traceback (most recent call last):
+		...
+	TypeError: size must be an integer
+
+size is zero
+
+	>>> print_square(0)
+	 
+
+size is less than zero
+
+	>>> print_square(-3)
+	Traceback (most recent call last):
+		...
+	ValueError: size must >= 0
+
+size is a large value
+
+	>>> print_square(3 ** 10 ** 10)
+	Traceback (most recent call last):
+		...
+	MemoryError

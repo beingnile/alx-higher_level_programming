@@ -1,0 +1,271 @@
+``2-matrix_divided`` tests
+==========================
+
+This document defines tests for the ``matrix_divided`` function
+from the ``2-matrix-divided`` module.
+Function prototype: ``def matrix_divided(matrix, div)``
+
+Import the ``matrix-divided`` function
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test cases:
+matrix is a valid matrix list of lists of integers
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.07, 1.0], [1.33, 1.07, 2.0]]
+
+matrix is a list of lists with zeros
+
+	>>> matrix = [
+		[0, 0, 0, 0],
+		[0, 0, 0, 0]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]]
+
+matrix is a valid matrix list of lists of negative integers
+
+	>>> matrix = [
+		[-1, -2, -3],
+		[-4, -5, -6]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]
+
+matrix is a list of lists of floats(2 decimal places)
+
+	>>> matrix = [
+		[1.1, 2.2, 3.3],
+		[4.4, 5.5, 6.6]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[0.37, 0.73, 1.1], [1.47, 1.83, 2.2]]
+
+matrix is a list of lists of floats(4 decimal places)
+
+	>>> matrix = [
+		[1.1234, 2.2345, 3.3456],
+		[4.4567, 5.5678, 6.6789]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[0.37, 0.74, 1.12], [1.49, 1.86, 2.23]]
+
+matrix is a list of lists of floats(varying decimal places)
+
+	>>> matrix = [
+		[1.1, 2.23, 3],
+		[4.456, 5.5678, 6.0]
+	]
+	>>> matrix_divided(matrix, 3)
+	[[0.37, 0.74, 1.0], [1.49, 1.86, 2.0]]
+
+matrix is a list of lists with different sizes
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5]
+	]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: Each row of the matrix must have the same size
+
+matrix is an empty list
+
+	>>> matrix = []
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a dict
+
+	>>> matrix = {}
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a tuple
+
+	>>> matrix = ()
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is an integer
+
+	>>> matrix = 6
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a string
+
+	>>> matrix = "test"
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of empty lists
+
+	>>> matrix = [[], [], []]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of tuples
+
+	>>> matrix = [(), (), ()]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of dicts
+
+	>>> matrix = [{}, {}, {}]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of strings
+
+	>>> matrix = ["tests", "test", "drive"]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of different types
+
+	>>> matrix = [None, "Test", 12]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of lists with tuples
+
+	>>> matrix = [[(1, 2, 3), (4, 5, 6)], [()], [()]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of lists with strings
+
+	>>> matrix = [["test", "drive"], ["test", "drive"]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of lists with dicts
+
+	>>> matrix = [[{}, {}] , [{}, {}], [{}, {}]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is a list of lists with different types
+
+	>>> matrix = [[1, 2 "test"] , [None, {}], [(), 1.45]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+matrix is of NoneType
+
+	>>> matrix = None
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+div is a string
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, "3")
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+div is 0
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+		...
+	ZeroDivisionError: division by zero
+
+div is a list
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, [])
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+div is a dict
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, {})
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+div is of Nonetype
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, None)
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+div is a tuple
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, (1, 2))
+	Traceback (most recent call last):
+		...
+	TypeError: div must be a number
+
+div is a negative value
+
+	>>> matrix = [
+		[1, 2, 3],
+		[4, 5, 6]
+	]
+	>>> matrix_divided(matrix, -3)
+	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]

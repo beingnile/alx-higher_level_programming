@@ -18,7 +18,7 @@ Both arguments are passed
 Empty strings as argument
 
 	>>> say_my_name("")
-	My name is    
+	My name is  
 
 A single argument is passed
 
@@ -32,7 +32,7 @@ A float as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", 3.84)
+	>>> say_my_name("Walter", 3.84)
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -44,7 +44,7 @@ An integer as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", 3)
+	>>> say_my_name("Walter", 3)
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -56,7 +56,7 @@ A list as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", [])
+	>>> say_my_name("Walter", [])
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -68,7 +68,7 @@ A dict as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", {})
+	>>> say_my_name("Walter", {})
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -80,7 +80,7 @@ A tuple as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", ())
+	>>> say_my_name("Walter", ())
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -92,7 +92,7 @@ A NoneType as an argument
 		...
 	TypeError: first_name must be a string
 
-	>>> say_my name("Walter", None)
+	>>> say_my_name("Walter", None)
 	Traceback (most recent call last):
 		...
 	TypeError: last_name must be a string
@@ -102,7 +102,7 @@ A concatenated string as an argument
 	>>> say_my_name("Walter" + " White")
 	My name is Walter White 
 
-	>>> say_my name("Winslow", "Walter" + " White")
+	>>> say_my_name("Winslow", "Walter" + " White")
 	My name is Winslow Walter White
 
 A multiplied string as an argument
@@ -110,7 +110,7 @@ A multiplied string as an argument
 	>>> say_my_name("Walter", "Tin" * 2)
 	My name is Walter TinTin
 
-	>>> say_my name("Tin" * 2, "White")
+	>>> say_my_name("Tin" * 2, "White")
 	My name is TinTin White
 
 lower() string method as an argument

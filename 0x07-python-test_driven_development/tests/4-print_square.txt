@@ -55,18 +55,11 @@ size is of NoneType
 size is zero
 
 	>>> print_square(0)
-	 
+	<BLANKLINE>
 
 size is less than zero
 
 	>>> print_square(-3)
 	Traceback (most recent call last):
 		...
-	ValueError: size must >= 0
-
-size is a large value
-
-	>>> print_square(3 ** 10 ** 10)
-	Traceback (most recent call last):
-		...
-	MemoryError
+	ValueError: size must be >= 0

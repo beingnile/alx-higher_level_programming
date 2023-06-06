@@ -13,63 +13,63 @@ Test cases:
 matrix is a valid matrix list of lists of integers
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[0.33, 0.07, 1.0], [1.33, 1.07, 2.0]]
 
 matrix is a list of lists with zeros
 
 	>>> matrix = [
-		[0, 0, 0, 0],
-		[0, 0, 0, 0]
-	]
+	...		[0, 0, 0, 0],
+	...		[0, 0, 0, 0]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0]]
 
 matrix is a valid matrix list of lists of negative integers
 
 	>>> matrix = [
-		[-1, -2, -3],
-		[-4, -5, -6]
-	]
+	...		[-1, -2, -3],
+	...		[-4, -5, -6]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]
 
 matrix is a list of lists of floats(2 decimal places)
 
 	>>> matrix = [
-		[1.1, 2.2, 3.3],
-		[4.4, 5.5, 6.6]
-	]
+	...		[1.1, 2.2, 3.3],
+	...		[4.4, 5.5, 6.6]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[0.37, 0.73, 1.1], [1.47, 1.83, 2.2]]
 
 matrix is a list of lists of floats(4 decimal places)
 
 	>>> matrix = [
-		[1.1234, 2.2345, 3.3456],
-		[4.4567, 5.5678, 6.6789]
-	]
+	...		[1.1234, 2.2345, 3.3456],
+	...		[4.4567, 5.5678, 6.6789]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[0.37, 0.74, 1.12], [1.49, 1.86, 2.23]]
 
 matrix is a list of lists of floats(varying decimal places)
 
 	>>> matrix = [
-		[1.1, 2.23, 3],
-		[4.456, 5.5678, 6.0]
-	]
+	...		[1.1, 2.23, 3],
+	...		[4.456, 5.5678, 6.0]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	[[0.37, 0.74, 1.0], [1.49, 1.86, 2.0]]
 
 matrix is a list of lists with different sizes
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5]
-	]
+	...		[1, 2, 3],
+	...		[4, 5]
+	...	]
 	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 		...
@@ -181,7 +181,7 @@ matrix is a list of lists with dicts
 
 matrix is a list of lists with different types
 
-	>>> matrix = [[1, 2 "test"] , [None, {}], [(), 1.45]]
+	>>> matrix = [[1, 2, "test"] , [None, {}], [(), 1.45]]
 	>>> matrix_divided(matrix, 3)
 	Traceback (most recent call last):
 		...
@@ -198,9 +198,9 @@ matrix is of NoneType
 div is a string
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, "3")
 	Traceback (most recent call last):
 		...
@@ -209,9 +209,9 @@ div is a string
 div is 0
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, 0)
 	Traceback (most recent call last):
 		...
@@ -220,9 +220,9 @@ div is 0
 div is a list
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, [])
 	Traceback (most recent call last):
 		...
@@ -231,9 +231,9 @@ div is a list
 div is a dict
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, {})
 	Traceback (most recent call last):
 		...
@@ -242,9 +242,9 @@ div is a dict
 div is of Nonetype
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, None)
 	Traceback (most recent call last):
 		...
@@ -253,9 +253,9 @@ div is of Nonetype
 div is a tuple
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, (1, 2))
 	Traceback (most recent call last):
 		...
@@ -264,8 +264,8 @@ div is a tuple
 div is a negative value
 
 	>>> matrix = [
-		[1, 2, 3],
-		[4, 5, 6]
-	]
+	...		[1, 2, 3],
+	...		[4, 5, 6]
+	...	]
 	>>> matrix_divided(matrix, -3)
 	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]

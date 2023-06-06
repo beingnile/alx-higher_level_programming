@@ -17,7 +17,7 @@ matrix is a valid matrix list of lists of integers
 	...		[4, 5, 6]
 	...	]
 	>>> matrix_divided(matrix, 3)
-	[[0.33, 0.07, 1.0], [1.33, 1.07, 2.0]]
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
 
 matrix is a list of lists with zeros
 
@@ -35,7 +35,7 @@ matrix is a valid matrix list of lists of negative integers
 	...		[-4, -5, -6]
 	...	]
 	>>> matrix_divided(matrix, 3)
-	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]
 
 matrix is a list of lists of floats(2 decimal places)
 
@@ -268,4 +268,4 @@ div is a negative value
 	...		[4, 5, 6]
 	...	]
 	>>> matrix_divided(matrix, -3)
-	[[-0.33, -0.07, -1.0], [-1.33, -1.07, -2.0]]
+	[[-0.33, -0.67, -1.0], [-1.33, -1.67, -2.0]]

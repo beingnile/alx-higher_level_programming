@@ -1,0 +1,74 @@
+``0-add_integer`` Test
+======================
+
+This document tests the ``add_integer`` function from the ``0-add_integer`` module
+
+Import ``add_integer`` from the ``0-add_integer`` module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+Test cases:
+Only one argument is provided
+
+	>>> add_integer(2)
+	100
+
+Both arguments are integers
+
+	>>> add_integer(5, 7)
+	12
+
+Both arguments are passed as keyword arguments
+
+	>>> add_integer(a=5, b=7)
+	12
+
+Both arguments are passed as integer variables
+
+	>>> a = 2
+	>>> b = 5
+	>>> add_integer(a, b)
+	7
+
+Both integers are passed as floats
+
+	>>> add_integer(9.8, 4.4)
+	13
+
+One float is passed as an argument
+
+	>>> add_integer(4.4)
+	102
+
+A string is passed as argument
+
+	>>> add_integer("test")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+Two strings are passed as arguments
+
+	>>> add_integer("test", "drive")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+b is passed as a string
+
+	>>> add_integer(3, "test")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
+
+A dictionary is passed as either a or b
+
+	>>> add_integer({})
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(3, {})
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer

@@ -38,7 +38,6 @@ Sort using method print_sorted
 Sort using internal sort function
 
 	>>> my_list.sort()
-	[1, 2, 3, 4]
 	>>> my_list
 	[1, 2, 3, 4]
 
@@ -52,9 +51,9 @@ Check if value in my_list
 Check if value not in my_list
 
 	>>> 9 not in my_list
-	False
-	>>> 3 not in my_list
 	True
+	>>> 3 not in my_list
+	False
 
 Concatenate with list object
 

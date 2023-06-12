@@ -19,6 +19,11 @@ Value is an instance of list type
 	>>> isinstance(my_list, list)
 	True
 
+Check instance type
+
+	>>> type(my_list)
+	<class '1-my_list.MyList'>
+
 Append values to list
 
 	>>> my_list.append(1)

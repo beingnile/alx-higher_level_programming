@@ -1,0 +1,94 @@
+`1-my_list` tests
+==================
+
+This document defines tests for the class `MyList` from the module
+`1-my_list`
+
+Import the class
+
+	>>> MyList = __import__('1-my_list').MyList
+
+Test Cases
+==========
+Create an object instance of type MyList
+
+	>>> my_list = MyList()
+
+Value is an instance of list type
+
+	>>> isinstance(my_list, list)
+	True
+
+Append values to list
+
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list
+	[1, 4, 2, 3]
+
+Sort using method print_sorted
+
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4]
+	>>> my_list
+	[1, 4, 2, 3]
+
+Sort using internal sort function
+
+	>>> my_list.sort()
+	[1, 2, 3, 4]
+	>>> my_list
+	[1, 2, 3, 4]
+
+Check if value in my_list
+
+	>>> 3 in my_list
+	True
+	>>> 9 in my_list
+	False
+
+Check if value not in my_list
+
+	>>> 9 not in my_list
+	False
+	>>> 3 not in my_list
+	True
+
+Concatenate with list object
+
+	>>> l = [5, 6, 7, 8]
+	>>> my_list + l
+	[1, 2, 3, 4, 5, 6, 7, 8]
+
+Multiply my_list
+
+	>>> 2 * my_list
+	[1, 2, 3, 4, 1, 2, 3, 4]
+	>>> my_list * 2
+	[1, 2, 3, 4, 1, 2, 3, 4]
+
+Access items
+
+	>>> my_list[0]
+	1
+
+Slice my_list
+
+	>>> my_list[1:3]
+	[2, 3]
+	>>> my_list[0:4:2]
+	[1, 3]
+
+Get length of my_list
+
+	>>> len(my_list)
+	4
+
+Get maximum and minimum values
+
+	>>> max(my_list)
+	4
+	>>> min(my_list)
+	1

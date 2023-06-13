@@ -14,67 +14,88 @@ Create an object of type `BaseGeometry`
 
 	>>> bg = BaseGeometry()
 
-Try area method
+Test area method
 
 	>>> bg.area()
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
 
-Try integer_validator method
+Test integer_validator method without arguments
+
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test integer_validator method with one argument
+
+	>>> bg.integer_validator("width")
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+Test integer_validator method with arguments
 
 	>>> bg.integer_validator("width", 12)
 
-Input str in-place of int for integer_validator
+Test str in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", "12")
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input list in-place of int for integer_validator
+Test list in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", [])
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input float in-place of int for integer_validator
+Test float in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", 3.0)
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input NoneType in-place of int for integer_validator
+Test NoneType in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", None)
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input dict in-place of int for integer_validator
+Test dict in-place of int for integer_validator
 
-	>>> bg.integer_validator("width", {})
+	>>> bg.integer_validator("width", {2, 4})
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input tuple in-place of int for integer_validator
+Test tuple in-place of int for integer_validator
 
-	>>> bg.integer_validator("width", ())
+	>>> bg.integer_validator("width", (1, 2))
 	Traceback (most recent call last):
 		...
 	TypeError: width must be an integer
 
-Input negative integers in-place of int for integer_validator
+Test Boolean in-place of int for integer_validator
+
+	>>> bg.integer_validator("width", True)
+	Traceback (most recent call last):
+		...
+	TypeError: width must be an integer
+
+Test negative integers in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", -21)
 	Traceback (most recent call last):
 		...
 	ValueError: width must be greater than 0
 
-Input zero in-place of int for integer_validator
+Test zero in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", 0)
 	Traceback (most recent call last):

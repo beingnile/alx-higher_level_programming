@@ -72,7 +72,7 @@ Test Boolean in place of int for integer_validator
 	>>> bg.integer_validator("width", True)
 	Traceback (most recent call last):
 		...
-	ValueError: width must be greater than 0
+	TypeError: width must be an integer
 
 Input negative integers in-place of int for integer_validator
 

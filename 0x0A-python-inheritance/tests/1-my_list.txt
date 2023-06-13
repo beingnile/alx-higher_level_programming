@@ -40,6 +40,22 @@ Sort using method print_sorted
 	>>> my_list
 	[1, 4, 2, 3]
 
+Sort using negative numbers
+
+	>>> test_list = my_list[:]
+	>>> test_list.append(-3)
+	>>> test_list.append(-1)
+	>>> test_list.print_sorted()
+	[-3, -1, 1, 2, 3, 44]
+	>>> test_list
+	[1, 4, 2, 3, -3, -1]
+
+Test with empty list
+
+	>>> empty_list = MyList()
+	>>> empty_list.print_sorted()
+	[]
+
 Sort using internal sort function
 
 	>>> my_list.sort()

@@ -14,14 +14,21 @@ Create an object of type `BaseGeometry`
 
 	>>> bg = BaseGeometry()
 
-Try area method
+Test area method
 
 	>>> bg.area()
 	Traceback (most recent call last):
 		...
 	Exception: area() is not implemented
 
-Try integer_validator method
+Test empty integer_validator method
+
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+Test integer_validator method
 
 	>>> bg.integer_validator("width", 12)
 

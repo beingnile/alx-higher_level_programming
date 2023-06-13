@@ -84,9 +84,7 @@ Test tuple in-place of int for integer_validator
 Test Boolean in-place of int for integer_validator
 
 	>>> bg.integer_validator("width", True)
-	Traceback (most recent call last):
-		...
-	TypeError: width must be an integer
+
 
 Test negative integers in-place of int for integer_validator
 

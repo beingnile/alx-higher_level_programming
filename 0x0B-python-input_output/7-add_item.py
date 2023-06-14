@@ -18,5 +18,6 @@ def main():
         my_list.append(sys.argv[i])
     save_to_json_file(my_list, filename)
 
+
 if __name__ == "__main__":
     main()

@@ -241,7 +241,7 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(actual, expected)
         self.assertEqual(actual1, expected1)
 
-    def test_update_method_args(self):
+    def test_update_method(self):
         r = Rectangle(10, 10, 10, 10, 1)
         r.update()
         self.assertEqual('[Rectangle] (1) 10/10 - 10/10', str(r))
@@ -255,6 +255,14 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual('[Rectangle] (89) 4/10 - 2/3', str(r))
         r.update(89, 2, 3, 4, 5)
         self.assertEqual('[Rectangle] (89) 4/5 - 2/3', str(r))
+        r.update(89, 2, 3, 4, 5, height=7)
+        self.assertEqual('[Rectangle] (89) 4/5 - 2/3', str(r))
+        r.update(height=7)
+        self.assertEqual('[Rectangle] (89) 4/5 - 2/7', str(r))
+        r.update(width=1, x=2)
+        self.assertEqual('[Rectangle] (89) 2/5 - 1/7', str(r))
+        r.update(id=10, y=3)
+        self.assertEqual('[Rectangle] (10) 2/3 - 1/7', str(r))
 
 
 if __name__ == '__main__':

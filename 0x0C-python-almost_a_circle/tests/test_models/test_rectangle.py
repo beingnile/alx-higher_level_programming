@@ -210,6 +210,37 @@ class RectangleTestCase(unittest.TestCase):
         output = str(r)
         self.assertEqual(expected, output)
 
+    def test_display_method_with_coordinates(self):
+        """You might be wondering why there are two tests for the
+        display method. The class Rectangle has 3 optional arguments,
+        x, y, and id and 2 required arguments width and height.
+
+        The display method treats the stdout stream like somewhat of
+        a cartesian plane. Without the x and y, it prints out the
+        rectangle object as normal. With x and y, the rectangle is
+        printed at starting from point x and y
+        """
+        r = Rectangle(2, 3, 2, 2)
+        expected = "\n\n  ##\n  ##\n  ##\n"
+
+        r1 = Rectangle(3, 2, 1, 0)
+        expected1 = " ###\n ###\n"
+
+        captured = StringIO()
+        with redirect_stdout(captured):
+            r.display()
+
+        actual = captured.getvalue()
+
+        captured1 = StringIO()
+        with redirect_stdout(captured1):
+            r1.display()
+
+        actual1 = captured1.getvalue()
+
+        self.assertEqual(actual, excepted)
+        self.assertEqual(actual1, expected1)
+
 
 if __name__ == '__main__':
     unittest.main()

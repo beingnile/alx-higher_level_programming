@@ -204,6 +204,12 @@ class RectangleTestCase(unittest.TestCase):
         actual = captured.getvalue()
         self.assertEqual(expected, actual)
 
+    def test_overwritten_str_method(self):
+        r = Rectangle(4, 6, 2, 1, 12)
+        expected = "[Rectangle] (12) 2/1 - 4/6"
+        output = str(r)
+        self.assertEqual(expected, output)
+
 
 if __name__ == '__main__':
     unittest.main()

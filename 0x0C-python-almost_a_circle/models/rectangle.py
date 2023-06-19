@@ -70,3 +70,10 @@ class Rectangle(Base):
             for w in range(self.width):
                 print("#", end='')
             print('')
+
+    def __str__(self):
+        """Overwrtes __str__ to return a custom string"""
+        ret1 = f'[{self.__class__.__name__}] ({self.id}) '
+        ret2 = f'{self.x}/{self.y} - {self.width}/{self.height}'
+
+        return ret1 + ret2

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Test Rectangle class"""
 import unittest
+from io import StringIO
+from contextlib import redirect_stdout
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -184,3 +186,24 @@ class RectangleTestCase(unittest.TestCase):
     def test_area_method(self):
         r = Rectangle(10, 2, 0, 0, 12)
         self.assertEqual(r.area(), 20)
+
+    def test_display_method(self):
+        """The display method prints the rectangle figure to stdout
+        using #.
+
+        Testing this requires some sort of way of capturing the stdout
+        value when running r.display(), and therefore StringIO is employed
+        """
+        r = Rectangle(4, 2)
+        expected = "####\n####\n"
+        captured = StringIO()
+
+        with redirect_stdout(captured):
+            r.display()
+
+        actual = captured.getvalue()
+        self.assertEqual(expected, actual)
+
+
+if __name__ == '__main__':
+    unittest.main()

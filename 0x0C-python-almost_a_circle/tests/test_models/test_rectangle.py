@@ -241,6 +241,23 @@ class RectangleTestCase(unittest.TestCase):
         self.assertEqual(actual, expected)
         self.assertEqual(actual1, expected1)
 
+    def test_update_method_args(self):
+        r = Rectangle(10, 10, 10, 10)
+        self.assertEqual('[Rectangle] (1) 10/10 - 10/10', str(r))
+        r.update(89)
+        self.assertEqual('[Rectangle] (89) 10/10 - 10/10', str(r))
+        r.update(89, 2)
+        self.assertEqual('[Rectangle] (89) 10/10 - 2/10', str(r))
+        r.update(89, 2, 3)
+        self.assertEqual('[Rectangle] (89) 10/10 - 2/3', str(r))
+        r.update(89, 2, 3, 4)
+        self.assertEqual('[Rectangle] (89) 4/10 - 2/3', str(r))
+        r.update(89, 2, 3, 4, 5)
+        self.assertEqual('[Rectangle] (89) 4/5 - 2/3', str(r))
+
+        with self.assertRaises(AttributeError):
+            r.update()
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -180,3 +180,7 @@ class RectangleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError) as exc:
             r = Rectangle(10, 2, 0, -10, 12)
         self.assertEqual('y must be >= 0', str(exc.exception))
+
+    def test_area_method(self):
+        r = Rectangle(10, 2, 0, 0, 12)
+        self.assertEqual(r.area(), 20)

@@ -238,7 +238,7 @@ class RectangleTestCase(unittest.TestCase):
 
         actual1 = captured1.getvalue()
 
-        self.assertEqual(actual, excepted)
+        self.assertEqual(actual, expected)
         self.assertEqual(actual1, expected1)
 
 

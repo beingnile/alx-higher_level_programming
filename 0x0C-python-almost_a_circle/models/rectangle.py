@@ -81,3 +81,9 @@ class Rectangle(Base):
         ret2 = f'{self.x}/{self.y} - {self.width}/{self.height}'
 
         return ret1 + ret2
+
+    def update(self, *args):
+        """Updates the attributes of a rectangle object"""
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        for i, value in enumerate(args):
+            setattr(self, attrs[i], value)

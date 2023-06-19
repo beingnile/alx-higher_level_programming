@@ -82,8 +82,12 @@ class Rectangle(Base):
 
         return ret1 + ret2
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates the attributes of a rectangle object"""
         attrs = ['id', 'width', 'height', 'x', 'y']
+        if args is None or len(args) == 0 and kwargs is not None:
+            for key, value in kwargs.items():
+                if hasattr(self, key):
+                    setattr(self, key, value)
         for i, value in enumerate(args):
             setattr(self, attrs[i], value)

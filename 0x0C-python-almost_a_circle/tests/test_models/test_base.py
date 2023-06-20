@@ -2,6 +2,7 @@
 """Tests the base class"""
 import unittest
 from models.base import Base
+from models.rectangle import Rectangle
 
 
 class BaseTestCase(unittest.TestCase):
@@ -33,3 +34,11 @@ class BaseTestCase(unittest.TestCase):
         b2.__nb_objects = 69
         b3 = Base()
         self.assertEqual(b3.id, 3)
+
+    def test_to_json_string(self):
+        r = Rectangle(10, 7, 2, 8, 1)
+        dictionary = r.to_dictionary()
+        json_dict = Base.to_json_string([dictionary])
+        expected = '[{"x": 2, "y": 8, "id": 1, "height": 7, "width": 10}]'
+
+        self.assertEqual(json_dict, expected)

@@ -34,3 +34,13 @@ class Square(Rectangle):
                     setattr(self, key, value)
         for i, value in enumerate(args):
             setattr(self, attrs[i], value)
+
+    def to_dictionary(self):
+        """Returns a dictionary representation of a Square"""
+        res = {}
+        attrs = ['id', 'x', 'size', 'y']
+        for attr in attrs:
+            if hasattr(self, attr):
+                res[attr] = getattr(self, attr)
+
+        return res

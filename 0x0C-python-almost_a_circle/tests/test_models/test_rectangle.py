@@ -284,6 +284,12 @@ class RectangleTestCase(unittest.TestCase):
         r.update(id=10, y=3)
         self.assertEqual('[Rectangle] (10) 2/3 - 1/7', str(r))
 
+    def test_to_dictionary_method(self):
+        r = Rectangle(10, 2, 1, 9, 1)
+        r_dict = r.to_dictionary()
+        expected = {'x': 1, 'y': 9, 'id': 1, 'height': 2, 'width': 10}
+        self.assertDictEqual(r_dict, expected)
+
 
 if __name__ == '__main__':
     unittest.main()

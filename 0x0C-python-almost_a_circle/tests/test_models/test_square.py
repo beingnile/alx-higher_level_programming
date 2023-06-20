@@ -7,7 +7,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class RectangleTestCase(unittest.TestCase):
+class SquareTestCase(unittest.TestCase):
     """Defines all test cases for the Rectangle class"""
     def test_subclass_check(self):
         self.assertTrue(issubclass(Square, Rectangle))

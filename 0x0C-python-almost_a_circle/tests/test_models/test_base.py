@@ -20,16 +20,16 @@ class BaseTestCase(unittest.TestCase):
         self.assertIsInstance(b3, Base)
         self.assertEqual(b3.id, 12)
 
-    def test_alter_nb_instance(self):
-        """Test nb_instance is a private class attribute.
+    def test_alter_nb_objects(self):
+        """Test nb_objects is a private class attribute.
         This testcase tests if the attribute can be altered by
         an object
         """
         b1 = Base()
         b2 = Base()
         with self.assertRaises(AttributeError):
-            instance = b1.nb_instance
+            instance = b1.nb_objects
 
-        b2.__nb_instance = 69
+        b2.__nb_objects = 69
         b3 = Base()
         self.assertEqual(b3.id, 3)

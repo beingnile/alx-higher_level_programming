@@ -73,6 +73,11 @@ class RectangleTestCase(unittest.TestCase):
             r = Rectangle(-10, 2, 0, 0, 12)
         self.assertEqual('width must be > 0', str(exc.exception))
 
+    def test_float_passed_as_width(self):
+        with self.assertRaises(TypeError) as exc:
+            r = Rectangle(10.10, 2, 0, 0, 12)
+        self.assertEqual('width must be an integer', str(exc.exception))
+
     def test_str_passed_as_height(self):
         with self.assertRaises(TypeError) as exc:
             r = Rectangle(10, '2', 0, 0, 12)
@@ -113,6 +118,11 @@ class RectangleTestCase(unittest.TestCase):
             r = Rectangle(10, -2, 0, 0, 12)
         self.assertEqual('height must be > 0', str(exc.exception))
 
+    def test_float_passed_as_height(self):
+        with self.assertRaises(TypeError) as exc:
+            r = Rectangle(10, 2.22, 0, 0, 12)
+        self.assertEqual('height must be an integer', str(exc.exception))
+
     def test_str_passed_as_x(self):
         with self.assertRaises(TypeError) as exc:
             r = Rectangle(10, 2, '0', 0, 12)
@@ -148,6 +158,11 @@ class RectangleTestCase(unittest.TestCase):
             r = Rectangle(10, 2, -10, 0, 12)
         self.assertEqual('x must be >= 0', str(exc.exception))
 
+    def test_float_passed_as_x(self):
+        with self.assertRaises(TypeError) as exc:
+            r = Rectangle(10, 2, 3.33, 0, 12)
+        self.assertEqual('x must be an integer', str(exc.exception))
+
     def test_str_passed_as_y(self):
         with self.assertRaises(TypeError) as exc:
             r = Rectangle(10, 2, 0, '0', 12)
@@ -182,6 +197,11 @@ class RectangleTestCase(unittest.TestCase):
         with self.assertRaises(ValueError) as exc:
             r = Rectangle(10, 2, 0, -10, 12)
         self.assertEqual('y must be >= 0', str(exc.exception))
+
+    def test_float_passed_as_y(self):
+        with self.assertRaises(TypeError) as exc:
+            r = Rectangle(10, 2, 0, 3.33, 12)
+        self.assertEqual('y must be an integer', str(exc.exception))
 
     def test_area_method(self):
         r = Rectangle(10, 2, 0, 0, 12)

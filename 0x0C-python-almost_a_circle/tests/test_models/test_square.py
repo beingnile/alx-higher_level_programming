@@ -72,6 +72,11 @@ class SquareTestCase(unittest.TestCase):
             s = Square(-5, 0, 0, 12)
         self.assertEqual('width must be > 0', str(exc.exception))
 
+    def test_float_passed_as_size(self):
+        with self.assertRaises(TypeError) as exc:
+            s = Square(5.5, 0, 0, 12)
+        self.assertEqual('width must be an integer', str(exc.exception))
+
     def test_str_passed_as_x(self):
         with self.assertRaises(TypeError) as exc:
             s = Square(5, '0', 0, 12)
@@ -107,6 +112,11 @@ class SquareTestCase(unittest.TestCase):
             s = Square(5, -10, 0, 12)
         self.assertEqual('x must be >= 0', str(exc.exception))
 
+    def test_float_passed_as_x(self):
+        with self.assertRaises(TypeError) as exc:
+            s = Square(5, 5.5, 0, 12)
+        self.assertEqual('x must be an integer', str(exc.exception))
+
     def test_str_passed_as_y(self):
         with self.assertRaises(TypeError) as exc:
             s = Square(5, 0, '0', 12)
@@ -141,6 +151,11 @@ class SquareTestCase(unittest.TestCase):
         with self.assertRaises(ValueError) as exc:
             s = Square(5, 0, -10, 12)
         self.assertEqual('y must be >= 0', str(exc.exception))
+
+    def test_float_passed_as_y(self):
+        with self.assertRaises(TypeError) as exc:
+            s = Square(5, 0, 5.5, 12)
+        self.assertEqual('y must be an integer', str(exc.exception))
 
     def test_area_method(self):
         s = Square(5, 0, 0, 12)

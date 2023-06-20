@@ -9,7 +9,6 @@ class Square(Rectangle):
         super().__init__(width=size, height=size, x=x, y=y, id=id)
         self.size = size
 
-
     @property
     def size(self):
         return self.__size
@@ -21,6 +20,8 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__size = value
+        self.__width = self.__size
+        self.__height = self.__size
 
     def __str__(self):
         """Overwrite __str__ for custom str output"""

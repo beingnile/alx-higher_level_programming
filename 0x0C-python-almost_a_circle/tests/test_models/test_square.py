@@ -175,6 +175,22 @@ class SquareTestCase(unittest.TestCase):
 
         self.assertEqual(actual, expected)
 
+    def test_update_method(self):
+        s = Square(5, 0, 0, 1)
+        self.assertEqual('[Square] (1) 0/0 - 5', str(s))
+        s.update(10)
+        self.assertEqual('[Square] (10) 0/0 - 5', str(s))
+        s.update(1, 2, x=12)
+        self.assertEqual('[Square] (1) 0/0 - 2', str(s))
+        s.update(1, 2, 3, 4)
+        self.assertEqual('[Square] (1) 3/4 - 2', str(s))
+        s.update(x=12)
+        self.assertEqual('[Square] (1) 12/4 - 2', str(s))
+        s.update(size=7, y=1)
+        self.assertEqual('[Square] (1) 12/1 - 7', str(s))
+        s.update(size=7, id=89, y=1)
+        self.assertEqual('[Square] (89) 12/1 - 7', str(s))
+
 
 if __name__ == '__main__':
     unittest.main()

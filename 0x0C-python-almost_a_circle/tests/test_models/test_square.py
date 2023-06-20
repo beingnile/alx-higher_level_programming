@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """Test Square class"""
+import os
 import unittest
 from io import StringIO
 from contextlib import redirect_stdout
@@ -9,6 +10,13 @@ from models.square import Square
 
 class SquareTestCase(unittest.TestCase):
     """Defines all test cases for the Square class"""
+    def setUp(self):
+        self.filename = "Square.json"
+
+    def tearDown(self):
+        if os.path.exists(self.filename):
+            os.remove(self.filename)
+
     def test_subclass_check(self):
         self.assertTrue(issubclass(Square, Rectangle))
 
@@ -211,6 +219,38 @@ class SquareTestCase(unittest.TestCase):
         s_dict = s.to_dictionary()
         expected = {'id': 1, 'x': 2, 'size': 10, 'y': 1}
         self.assertDictEqual(s_dict, expected)
+
+    def test_save_to_file(self):
+        self.assertFalse(os.path.exists(self.filename))
+        s1 = Square(10, 2, 8, 1)
+        s2 = Square(2, 0, 0, 2)
+        Square.save_to_file([s1, s2])
+        self.assertTrue(os.path.exists(self.filename))
+        exp = '[{"y": 8, "x": 2, "id": 1, "size": 10}, {"y": 0, "x": 0, "id": 2, "size": 2}]'
+        with open(self.filename, 'r') as f:
+            content = f.read()
+
+        self.assertTrue(exp, content)
+
+    def test_none_save_to_file(self):
+        self.assertFalse(os.path.exists(self.filename))
+        Square.save_to_file(None)
+        self.assertTrue(os.path.exists(self.filename))
+        exp = '[]'
+        with open(self.filename, 'r') as f:
+            content = f.read()
+
+        self.assertTrue(exp, content)
+
+    def test_empty_list_save_to_file(self):
+        self.assertFalse(os.path.exists(self.filename))
+        Square.save_to_file([])
+        self.assertTrue(os.path.exists(self.filename))
+        exp = '[]'
+        with open(self.filename, 'r') as f:
+            content = f.read()
+
+        self.assertTrue(exp, content)
 
 
 if __name__ == '__main__':

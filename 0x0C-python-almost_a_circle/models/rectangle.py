@@ -91,3 +91,13 @@ class Rectangle(Base):
                     setattr(self, key, value)
         for i, value in enumerate(args):
             setattr(self, attrs[i], value)
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        res = {}
+        attrs = ['x', 'y', 'id', 'height', 'width']
+        for attr in attrs:
+            if hasattr(self, attr):
+                res[attr] = getattr(self, attr)
+
+        return res

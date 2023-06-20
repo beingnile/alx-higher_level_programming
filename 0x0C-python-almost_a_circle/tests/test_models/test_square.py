@@ -8,7 +8,7 @@ from models.square import Square
 
 
 class SquareTestCase(unittest.TestCase):
-    """Defines all test cases for the Rectangle class"""
+    """Defines all test cases for the Square class"""
     def test_subclass_check(self):
         self.assertTrue(issubclass(Square, Rectangle))
 

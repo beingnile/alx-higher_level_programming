@@ -289,6 +289,26 @@ class SquareTestCase(unittest.TestCase):
         self.assertNotEqual(s, s1)
         self.assertFalse(s is s1)
 
+    def test_load_from_file(self):
+        s = Square(7, 9, 1, 5)
+        Square.save_to_file([s])
+
+        list_sq = Square.load_from_file()
+        self.assertIsinstance(list_sq, list)
+        for sq in list_sq:
+            self.assertIsinstance(sq, Square)
+            self.assertEqual(str(sq), '[Square] (5) 9/1 - 7')
+
+    def test_load_from_nonexist_file(self):
+        filename = 'Square.json'
+
+        if os.path.exists(filename):
+            os.remove(filename)
+        self.assertFalse(os.path.exists(filename))
+        list_sq = Square.load_from_file()
+        self.assertIsinstance(list_sq, list)
+        self.assertEqual(list_sq, [])
+
 
 if __name__ == '__main__':
     unittest.main()

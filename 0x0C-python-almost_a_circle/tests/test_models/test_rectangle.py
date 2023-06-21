@@ -365,6 +365,27 @@ class RectangleTestCase(unittest.TestCase):
         self.assertNotEqual(r, r1)
         self.assertFalse(r is r1)
 
+    def test_load_from_file(self):
+        r = Rectangle(10, 7, 2, 8, 1)
+        Rectangle.save_to_file([r])
+
+        list_rect = Rectangle.load_from_file()
+        self.assertIsinstance(list_rect, list)
+        for rect in list_rect:
+            self.assertIsinstance(rect, Rectangle)
+            self.assertEqual(str(rect), '[Rectangle] (1) 2/8 - 10/7')
+
+    def test_load_from_nonexist_file(self):
+        filename = 'Rectangle.json'
+
+        if os.path.exists(filename):
+            os.remove(filename)
+        self.assertFalse(os.path.exists(filename))
+        list_rect = Rectangle.load_from_file()
+        self.assertIsinstance(list_rect, list)
+        self.assertEqual(list_rect, [])
+
+
 
 if __name__ == '__main__':
     unittest.main()

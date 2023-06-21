@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a base class to manage the id attribute"""
 import json
+import csv
 
 
 class Base:
@@ -13,6 +14,20 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            from models.rectangle import Rectangle
+            instance = Rectangle(1, 1)
+            instance.update(**dictionary)
+        if cls.__name__ == 'Square':
+            from models.square import Square
+            instance = Square(1)
+            instance.update(**dictionary)
+
+        return instance
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -28,20 +43,6 @@ class Base:
             list_json = cls.to_json_string(list_dicts)
             with open(filename, 'w') as f:
                 f.write(list_json)
-
-    @classmethod
-    def create(cls, **dictionary):
-        """Returns an instance with all attributes already set"""
-        if cls.__name__ == 'Rectangle':
-            from models.rectangle import Rectangle
-            instance = Rectangle(1, 1)
-            instance.update(**dictionary)
-        if cls.__name__ == 'Square':
-            from models.square import Square
-            instance = Square(1)
-            instance.update(**dictionary)
-
-        return instance
 
     @classmethod
     def load_from_file(cls):

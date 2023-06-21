@@ -280,6 +280,15 @@ class SquareTestCase(unittest.TestCase):
         self.assertTrue(type(list_output) == list)
         self.assertListEqual(list_output, list_input)
 
+    def test_create(self):
+        s = Square(3, 1, 0, 1)
+        s_dict = s.to_dictionary()
+        s1 = Square.create(**s_dict)
+        self.assertEqual(str(s), '[Square] (1) 1/0 - 3')
+        self.assertEqual(str(s1), '[Square] (1) 1/0 - 3')
+        self.assertNotEqual(s, s1)
+        self.assertFalse(s is s1)
+
 
 if __name__ == '__main__':
     unittest.main()

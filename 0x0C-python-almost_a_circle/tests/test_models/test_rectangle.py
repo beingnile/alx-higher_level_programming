@@ -356,6 +356,15 @@ class RectangleTestCase(unittest.TestCase):
         self.assertListEqual(list_output, [{'height': 4, 'width': 10, 'id': 89},
                                             {'height': 7, 'width': 1, 'id': 7}])
 
+    def test_create(self):
+        r = Rectangle(3, 5, 1, 0, 1)
+        r_dict = r.to_dictionary()
+        r1 = Rectangle.create(**r_dict)
+        self.assertEqual(str(r), '[Rectangle] (1) 1/0 - 3/5')
+        self.assertEqual(str(r1), '[Rectangle] (1) 1/0 - 3/5')
+        self.assertNotEqual(r, r1)
+        self.assertFalse(r is r1)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -26,6 +26,20 @@ class Base:
             for obj in list_objs:
                 f.write(Base.to_json_string([obj.to_dictionary()]))
 
+    @classmethod
+    def create(cls, **dictionary):
+        """Returns an instance with all attributes already set"""
+        if cls.__name__ == 'Rectangle':
+            from models.rectangle import Rectangle
+            instance = Rectangle(1, 1)
+            instance.update(**dictionary)
+        if cls.__name__ == 'Square':
+            from models.square import Square
+            instance = Square(1)
+            instance.update(**dictionary)
+
+        return instance
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of

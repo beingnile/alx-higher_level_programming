@@ -67,7 +67,7 @@ class Base:
         if list_objs is None or len(list_objs) == 0:
             with open(filename, 'w') as f:
                 if cls.__name__ == 'Rectangle':
-                    fieldnames = ['id', 'width','height', 'x', 'y']
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
                 writer = csv.DictWriter(f, filename)
@@ -75,7 +75,7 @@ class Base:
         else:
             with open(filename, 'w') as f:
                 if cls.__name__ == 'Rectangle':
-                    fieldnames = ['id', 'width','height', 'x', 'y']
+                    fieldnames = ['id', 'width', 'height', 'x', 'y']
                 else:
                     fieldnames = ['id', 'size', 'x', 'y']
                 writer = csv.DictWriter(f, fieldnames)

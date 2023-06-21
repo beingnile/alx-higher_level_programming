@@ -10,13 +10,6 @@ from models.square import Square
 
 class SquareTestCase(unittest.TestCase):
     """Defines all test cases for the Square class"""
-    def setUp(self):
-        self.filename = "Square.json"
-
-    def tearDown(self):
-        if os.path.exists(self.filename):
-            os.remove(self.filename)
-
     def test_subclass_check(self):
         self.assertTrue(issubclass(Square, Rectangle))
 
@@ -221,33 +214,48 @@ class SquareTestCase(unittest.TestCase):
         self.assertDictEqual(s_dict, expected)
 
     def test_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = "Square.json"
+
+        if os.path.exists(filename):
+            os.remove(filename)
+
+        self.assertFalse(os.path.exists(filename))
         s1 = Square(10, 2, 8, 1)
         s2 = Square(2, 0, 0, 2)
         Square.save_to_file([s1, s2])
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[{"y": 8, "x": 2, "id": 1, "size": 10}, {"y": 0, "x": 0, "id": 2, "size": 2}]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)
 
     def test_none_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = "Square.json"
+
+        if os.path.exists(filename):
+            os.remove(filename)
+
+        self.assertFalse(os.path.exists(filename))
         Square.save_to_file(None)
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)
 
     def test_empty_list_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = "Square.json"
+
+        if os.path.exists(filename):
+            os.remove(filename)
+
+        self.assertFalse(os.path.exists(filename))
         Square.save_to_file([])
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)

@@ -10,13 +10,6 @@ from models.rectangle import Rectangle
 
 class RectangleTestCase(unittest.TestCase):
     """Defines all test cases for the Rectangle class"""
-    def setUp(self):
-        self.filename = 'Rectangle.json'
-
-    def tearDown(self):
-        if os.path.exists(self.filename):
-            os.remove(self.filename)
-
     def test_subclass_check(self):
         self.assertTrue(issubclass(Rectangle, Base))
 
@@ -299,33 +292,45 @@ class RectangleTestCase(unittest.TestCase):
         self.assertDictEqual(r_dict, expected)
 
     def test_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = 'Rectangle.json'
+
+        if os.path.exists(filename):
+            os.remove(filename)
+        self.assertFalse(os.path.exists(filename))
         r1 = Rectangle(10, 7, 2, 8, 1)
         r2 = Rectangle(2, 4, 0, 0, 2)
         Rectangle.save_to_file([r1, r2])
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[{"y": 8, "x": 2, "id": 1, "width": 10, "height": 7}, {"y": 0, "x": 0, "id": 2, "width": 2, "height": 4}]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)
 
     def test_none_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = 'Rectangle.json'
+
+        if os.path.exists(filename):
+            os.remove(filename)
+        self.assertFalse(os.path.exists(filename))
         Rectangle.save_to_file(None)
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)
 
     def test_empty_list_save_to_file(self):
-        self.assertFalse(os.path.exists(self.filename))
+        filename = 'Rectangle.json'
+
+        if os.path.exists(filename):
+            os.remove(filename)
+        self.assertFalse(os.path.exists(filename))
         Rectangle.save_to_file([])
-        self.assertTrue(os.path.exists(self.filename))
+        self.assertTrue(os.path.exists(filename))
         exp = '[]'
-        with open(self.filename, 'r') as f:
+        with open(filename, 'r') as f:
             content = f.read()
 
         self.assertTrue(exp, content)

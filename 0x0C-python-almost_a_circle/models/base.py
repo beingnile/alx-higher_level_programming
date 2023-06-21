@@ -59,7 +59,6 @@ class Base:
         except FileNotFoundError:
             return res
 
-
     @staticmethod
     def to_json_string(list_dictionaries):
         """Returns the JSON string representation of

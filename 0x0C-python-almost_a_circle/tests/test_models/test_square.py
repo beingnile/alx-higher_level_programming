@@ -260,6 +260,26 @@ class SquareTestCase(unittest.TestCase):
 
         self.assertTrue(exp, content)
 
+    def test_from_json_string_none_arg(self):
+        list_output = Square.from_json_string(None)
+        self.assertTrue(type(list_output) == list)
+        self.assertListEqual(list_output, [])
+
+    def test_from_json_string_empty_str_arg(self):
+        list_output = Square.from_json_string("")
+        self.assertTrue(type(list_output) == list)
+        self.assertListEqual(list_output, [])
+
+    def test_from_json_string(self):
+        list_input = [
+            {'id': 89, 'size': 10},
+            {'id': 7, 'size': 1}
+        ]
+        json_str_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_str_input)
+        self.assertTrue(type(list_output) == list)
+        self.assertListEqual(list_output, list_input)
+
 
 if __name__ == '__main__':
     unittest.main()

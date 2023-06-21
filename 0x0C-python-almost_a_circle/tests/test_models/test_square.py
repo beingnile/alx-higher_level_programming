@@ -294,9 +294,9 @@ class SquareTestCase(unittest.TestCase):
         Square.save_to_file([s])
 
         list_sq = Square.load_from_file()
-        self.assertIsinstance(list_sq, list)
+        self.assertIsInstance(list_sq, list)
         for sq in list_sq:
-            self.assertIsinstance(sq, Square)
+            self.assertIsInstance(sq, Square)
             self.assertEqual(str(sq), '[Square] (5) 9/1 - 7')
 
     def test_load_from_nonexist_file(self):
@@ -306,7 +306,7 @@ class SquareTestCase(unittest.TestCase):
             os.remove(filename)
         self.assertFalse(os.path.exists(filename))
         list_sq = Square.load_from_file()
-        self.assertIsinstance(list_sq, list)
+        self.assertIsInstance(list_sq, list)
         self.assertEqual(list_sq, [])
 
 

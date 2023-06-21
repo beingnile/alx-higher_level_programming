@@ -370,9 +370,9 @@ class RectangleTestCase(unittest.TestCase):
         Rectangle.save_to_file([r])
 
         list_rect = Rectangle.load_from_file()
-        self.assertIsinstance(list_rect, list)
+        self.assertIsInstance(list_rect, list)
         for rect in list_rect:
-            self.assertIsinstance(rect, Rectangle)
+            self.assertIsInstance(rect, Rectangle)
             self.assertEqual(str(rect), '[Rectangle] (1) 2/8 - 10/7')
 
     def test_load_from_nonexist_file(self):
@@ -382,7 +382,7 @@ class RectangleTestCase(unittest.TestCase):
             os.remove(filename)
         self.assertFalse(os.path.exists(filename))
         list_rect = Rectangle.load_from_file()
-        self.assertIsinstance(list_rect, list)
+        self.assertIsInstance(list_rect, list)
         self.assertEqual(list_rect, [])
 
 

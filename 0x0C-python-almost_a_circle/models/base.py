@@ -2,6 +2,7 @@
 """Defines a base class to manage the id attribute"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -114,3 +115,38 @@ class Base:
         if json_string is None or json_string == '':
             return []
         return json.loads(json_string)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """Draws Squares and rectangles using the turtle module"""
+        turtle.speed(3)
+        for obj in list_rectangles:
+            turtle.up()
+            turtle.goto(obj.x, obj.y)
+            turtle.down()
+            turtle.forward(obj.width)
+            turtle.rt(90)
+            turtle.forward(obj.height)
+            turtle.rt(90)
+            turtle.forward(obj.width)
+            turtle.rt(90)
+            turtle.forward(obj.height)
+            turtle.rt(90)
+            turtle.up()
+            turtle.home()
+        for obj in list_squares:
+            turtle.pencolor("violet")
+            turtle.up()
+            turtle.goto(obj.x, obj.y)
+            turtle.down()
+            turtle.forward(obj.size)
+            turtle.rt(90)
+            turtle.forward(obj.size)
+            turtle.rt(90)
+            turtle.forward(obj.size)
+            turtle.rt(90)
+            turtle.forward(obj.size)
+            turtle.rt(90)
+            turtle.up()
+            turtle.home()
+            turtle.ht()

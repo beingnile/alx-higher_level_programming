@@ -47,7 +47,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """Return a list of instances"""
-        filename = cls.__name__ + '.json'
+        filename = f'{cls.__name__}.json'
         res = []
         try:
             with open(filename, 'r') as f:
@@ -56,6 +56,45 @@ class Base:
                 for instance in list_json:
                     ins = cls.create(**instance)
                     res.append(ins)
+            return res
+        except FileNotFoundError:
+            return res
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Serializes objects to csv files"""
+        filename = f'{cls.__name__}.csv'
+        if cls.__name__ == 'Rectangle':
+            fieldnames = ['id', 'width', 'height', 'x', 'y']
+        else:
+            fieldnames = ['id', 'size', 'x', 'y']
+        if list_objs is None or len(list_objs) == 0:
+            with open(filename, 'w') as f:
+                writer = csv.DictWriter(f, fieldnames)
+                writer.writeheader()
+        else:
+            data = [obj.to_dictionary() for obj in list_objs]
+            with open(filename, 'w') as f:
+                writer = csv.DictWriter(f, fieldnames)
+                writer.writeheader()
+                writer.writerows(data)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of objects from a csv file"""
+        filename = f'{cls.__name__}.csv'
+        dict_res = []
+        res = []
+        try:
+            with open(filename, 'r') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    dict_res.append(row)
+                for dictionary in dict_res:
+                    for key, value in dictionary.items():
+                        dictionary[key] = int(value)
+                    obj = cls.create(**dictionary)
+                    res.append(obj)
             return res
         except FileNotFoundError:
             return res

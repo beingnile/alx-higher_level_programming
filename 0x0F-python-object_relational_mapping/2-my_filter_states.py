@@ -16,7 +16,8 @@ if __name__ == '__main__':
     conn = MySQLdb.connect(user=user, host=host, port=3306, passwd=pwd, db=db)
     cur = conn.cursor()
 
-    cur.execute(f'SELECT id, name FROM states WHERE name LIKE \'{arg}\'')
+    query = 'SELECT id, name FROM states WHERE name LIKE \'{}\''.format(arg)
+    cur.execute(query)
     states = cur.fetchall()
     for state in states:
         print(state)

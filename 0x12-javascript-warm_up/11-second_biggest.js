@@ -1,14 +1,13 @@
 #!/usr/bin/node
-let arr = process.argv;
+const raw = process.argv.slice(2);
+const arr = [];
 
-for (const item of arr) {
-  arr[arr.indexOf(item)] = parseInt(item);
+for (const item of raw) {
+  arr.push(parseInt(item));
 }
-
-arr = arr.slice(2);
 
 if (arr.length <= 3) {
   console.log(0);
 } else {
-  console.log(arr.sort().pop());
+  console.log(arr.sort().slice(-2)[0]);
 }

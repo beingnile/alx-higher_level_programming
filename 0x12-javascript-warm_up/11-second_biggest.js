@@ -6,7 +6,7 @@ for (const item of raw) {
   arr.push(parseInt(item));
 }
 
-if (arr.length <= 3) {
+if (process.argv.length <= 3) {
   console.log(0);
 } else {
   console.log(arr.sort().slice(-2)[0]);

@@ -1,10 +1,6 @@
 #!/usr/bin/node
 const raw = process.argv.slice(2);
-const arr = [];
-
-for (const item of raw) {
-  arr.push(Number(parseInt(item)));
-}
+const arr = raw.map((x) => parseInt(x));
 
 if (process.argv.length <= 3) {
   console.log(0);

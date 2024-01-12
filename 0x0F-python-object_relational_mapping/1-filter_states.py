@@ -8,11 +8,11 @@ import MySQLdb
 
 def filter_states(user, passwd, db):
     """Lists states starting with N"""
-    conn = MySQLdb.connect(host='localhost', port=3306,
+    conn = MySQLdb.connect(host='127.0.0.1', port=3306,
                            user=user, passwd=passwd,
                            db=db, charset='utf8')
     cur = conn.cursor()
-    p = 'SELECT * FROM states WHERE name LIKE \'N%\';'
+    p = "SELECT * FROM states WHERE name LIKE 'N%';"
     cur.execute(p)
     names = cur.fetchall()
     for name in names:

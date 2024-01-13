@@ -14,8 +14,9 @@ def my_filter_states(user, passwd, db, name):
     cur = conn.cursor()
     p = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name)
     cur.execute(p)
-    row = cur.fetchone()
-    print(row)
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
 
 
 if __name__ == '__main__':

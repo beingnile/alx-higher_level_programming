@@ -12,7 +12,7 @@ def my_filter_states(user, passwd, db, name):
                            user=user, passwd=passwd,
                            db=db, charset='utf8')
     cur = conn.cursor()
-    p = f"SELECT * FROM states WHERE name = '{name}' ORDER BY id ASC"
+    p = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC".format(name)
     cur.execute(p)
     row = cur.fetchone()
     print(row)

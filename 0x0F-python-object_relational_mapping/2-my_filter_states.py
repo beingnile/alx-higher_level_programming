@@ -18,6 +18,9 @@ def my_filter_states(user, passwd, db, name):
     for row in rows:
         print(row)
 
+    cur.close()
+    conn.close()
+
 
 if __name__ == '__main__':
     user = sys.argv[1]

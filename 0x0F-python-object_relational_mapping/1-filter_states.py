@@ -12,7 +12,7 @@ def filter_states(user, passwd, db):
                            user=user, passwd=passwd,
                            db=db, charset='utf8')
     cur = conn.cursor()
-    p = "SELECT * FROM states WHERE name REGEXP '^N';"
+    p = "SELECT * FROM states WHERE BINARY name REGEXP '^N';"
     cur.execute(p)
     names = cur.fetchall()
     for name in names:

@@ -13,9 +13,9 @@ def my_filter_states(user, passwd, db, name):
                            db=db, charset='utf8')
     cur = conn.cursor()
     p = """SELECT * FROM states
-    WHERE BINARY name = '%s'
-    ORDER BY id ASC""".format(name)
-    cur.execute(p)
+    WHERE BINARY name = %s
+    ORDER BY id ASC"""
+    cur.execute(p, (name,))
     rows = cur.fetchall()
     for row in rows:
         print(row)

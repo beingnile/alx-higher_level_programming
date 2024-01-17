@@ -6,9 +6,9 @@ import MySQLdb
 
 def cities_by_state(user, passwd, db):
     """Prints cities and states"""
-    conn = MySQLdb(host='localhost', port=3306,
-                   user=user, passwd=passwd,
-                   db=db, charset='utf8')
+    conn = MySQLdb.connect(host='localhost', port=3306,
+                           user=user, passwd=passwd,
+                           db=db, charset='utf8')
     cur = conn.cursor()
     p = """SELECT cities.id, cities.name, states.name
     FROM states JOIN cities ON

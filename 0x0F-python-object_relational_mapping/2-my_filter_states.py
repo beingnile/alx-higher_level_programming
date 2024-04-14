@@ -13,7 +13,7 @@ def filter_states_by_arg(user, passwd, db, arg):
                            passwd=passwd,
                            db=db)
     cur = conn.cursor()
-    p = "SELECT * FROM states WHERE name = '{}';".format(arg)
+    p = "SELECT * FROM states WHERE BINARY name LIKE '{}';".format(arg)
     cur.execute(p)
     rows = cur.fetchall()
     for row in rows:

@@ -1,10 +1,11 @@
 #!/usr/bin/python3
+"""Prints all states in the hbtn_0e_0_usa database"""
 from sys import argv
 import MySQLdb
 
 
 def select_states(user, passwd, db):
-    """Selects ALL states from the db hbtn_0e_0_usa"""
+    """Connects to MySQL and executes script"""
     conn = MySQLdb.connect(host='localhost',
                            port=3306,
                            user=user,

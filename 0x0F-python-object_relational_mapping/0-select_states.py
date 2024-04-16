@@ -5,7 +5,13 @@ import MySQLdb
 
 
 def select_states(user, passwd, db):
-    """Connects to MySQL and executes script"""
+    """Connects to MySQL and executes script
+
+    Arguments:
+    user (str): The username for the MySQL server to connect to
+    passwd (str): @user's password
+    db (str): The name of the database to connect to
+    """
     conn = MySQLdb.connect(host='localhost',
                            port=3306,
                            user=user,

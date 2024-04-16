@@ -7,8 +7,14 @@ import MySQLdb
 
 def filter_states_by_arg(user, passwd, db, arg):
     """Connects to a MySQL server and executes commands
-    Arguments passed to uery ae parameterized to prevent
+    Arguments passed are parameterized to prevent
     SQL injection attacks
+
+    Arguments:
+    user (str): The username for the MySQL server to connect to
+    passwd (str): @user's password
+    db (str): The name of the database to connect to
+    arg (str): Argument to match
     """
     conn = MySQLdb.connect(host="localhost",
                            port=3306,

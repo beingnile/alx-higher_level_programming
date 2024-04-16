@@ -6,7 +6,13 @@ import MySQLdb
 
 
 def filter_states_by_arg(user, passwd, db, arg):
-    """Connects to a MySQL server and executes commands"""
+    """Connects to a MySQL server and executes commands
+
+    Arguments:
+    user (str): The username for the MySQL server to connect to
+    passwd (str): @user's password
+    db (str): The name of the database to connect to
+    """
     conn = MySQLdb.connect(host="localhost",
                            port=3306,
                            user=user,

@@ -7,6 +7,11 @@ import MySQLdb
 def cities_by_state(user, passwd, db):
     """
     Connects to a MySQL server to get cities list
+
+    Arguments:
+    user (str): MySQL user to connect server with
+    passwd (str): The user's password
+    db (str) : The database name to connect to
     """
     conn = MySQLdb.connect(host='localhost',
                            port=3306,

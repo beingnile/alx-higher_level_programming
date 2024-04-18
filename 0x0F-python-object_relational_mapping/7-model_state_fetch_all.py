@@ -2,7 +2,6 @@
 """Lists all State objects from the database hbtn_0e_6_usa"""
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 

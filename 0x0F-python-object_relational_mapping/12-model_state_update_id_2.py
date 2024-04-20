@@ -18,7 +18,7 @@ def model_state_update_id_2(user, passwd, db):
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     with Session.begin() as session:
-        old_state = session.query(State).filter(State.id == 2)
+        old_state = session.get(State, 2)
         old_state.name = "New Mexico"
 
 

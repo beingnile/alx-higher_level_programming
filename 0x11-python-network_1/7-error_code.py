@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     url = sys.argv[1]
     r = requests.get(url)
-    if r.status >= 400:
-        print(f"Error code: {r.status}")
-    elif r.status == 200:
+    if r.status_code >= 400:
+        print(f"Error code: {r.status_code}")
+    elif r.status_code == 200:
         print(r.text)

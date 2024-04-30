@@ -11,5 +11,5 @@ if __name__ == '__main__':
     r = requests.get(url)
     if r.status >= 400:
         print(f"Error code: {r.status}")
-    else:
+    elif r.status == 200:
         print(r.text)
